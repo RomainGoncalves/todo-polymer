@@ -1,0 +1,18 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="task-item.html"/>
+
+<polymer-element name="task-list">
+  <template>
+    <task-item tasks="{{ tasks }}"></task-item>
+  </template>
+  <script>
+    Polymer('task-list', {
+      ready: function(){
+        this.tasks = [
+          {content: "This is some content"},
+          {content: "this is a second element"}
+        ]
+      }
+    });
+  </script>
+</polymer-element>

@@ -2,7 +2,7 @@
   'use strict';
 
   document.addEventListener('polymer-ready', function() {
-    
+
   });
 
 // wrap document so it plays nice with other libraries
