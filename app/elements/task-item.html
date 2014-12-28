@@ -1,16 +1,12 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
 <polymer-element name="task-item" attributes="tasks">
-  <template repeat="{{task in tasks}}">
-    1
-    {{ task.content }}
-    {{ tasks }}
+  <template>
+    <template repeat="{{task in tasks}}">
+      <div>Here : {{ task.content }}</div>
+    </template>
   </template>
   <script>
-    Polymer('task-item', {
-//      ready: function(){
-//        this.tasks = this.tasks || []
-//      }
-    });
+    Polymer('task-item');
   </script>
 </polymer-element>
