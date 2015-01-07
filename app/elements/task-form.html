@@ -1,26 +1,14 @@
-<link href="../bower_components/paper-input/paper-input-decorator.html" rel="import">
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link href="../bower_components/paper-input/paper-input-decorator.html" rel="import">
+<link rel="import" href="task-input.html"/>
 
 <polymer-element name="task-form" attributes="tasks">
   <template>
     <paper-input-decorator id="form" label="Task name" floatingLabel>
-      <input is="core-input">
+      <input is="task-input">
     </paper-input-decorator>
   </template>
   <script>
-    Polymer('task-form', {
-      ready: function() {
-        self = this;
-        console.log( this.$ );
-        this.$.input.addEventListener('keypress', function(e) {
-          console.log( "dtc" );
-          if (e.keyCode == 13) {
-            self.async(function() {
-              self.fire('enter', self.value);
-            });
-          }
-        });
-      }
-    })
+    Polymer('task-form', {});
   </script>
 </polymer-element>

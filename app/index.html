@@ -19,7 +19,6 @@
 
   <!-- build:vulcanized elements/elements.vulcanized.html -->
   <!-- endbuild-->
-  <link rel="import" href="elements/task-item.html"/>
   <link rel="import" href="elements/task-list.html"/>
   <link rel="import" href="elements/task-form.html"/>
 
@@ -27,28 +26,10 @@
 
 <body unresolved>
 
-<paper-input-decorator id="form" label="Task name" floatingLabel>
-  <input is="core-input">
-</paper-input-decorator>
-
+<task-form></task-form>
 <task-list></task-list>
 
-<script>
-  document.querySelector('paper-input-decorator').addEventListener('change', function(e) {
-    console.log(e.target.committedValue);
-  });
-
-  var taskList = document.querySelector('task-list');
-
-  console.log( taskList );
-</script>
-
-<!--<div horizontal layout>-->
-<!--<div>Alpha</div>-->
-<!--<div flex>Beta (flex)</div>-->
-<!--<div>Gamma</div>-->
-<!--</div>-->
-<!-- build:js scripts/app.js -->
+<script src="bower_components/underscore/underscore.js"></script>
 <script src="scripts/app.js"></script>
 <!-- endbuild-->
 </body>

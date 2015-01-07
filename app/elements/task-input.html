@@ -1,0 +1,13 @@
+<polymer-element name="task-input" extends="input" on-keypress="keypressAction">
+  <script>
+    Polymer('task-input', {
+      keypressAction: function(e) {
+        var ENTER_KEY = 13;
+        if(e.keyCode == ENTER_KEY){
+          this.fire('commit-task', {task: this.value});
+          this.value = '';
+        }
+      }
+    });
+  </script>
+</polymer-element>

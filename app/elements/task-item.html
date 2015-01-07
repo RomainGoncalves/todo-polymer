@@ -1,10 +1,28 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-
-<polymer-element name="task-item" attributes="tasks">
+<link rel="import" href="../bower_components/core-layout/core-layout.html">
+<link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
+<polymer-element name="task-item" attributes="task">
   <template>
-    <template repeat="{{task in tasks}}">
-      <div>Here : {{ task.content }}</div>
-    </template>
+    <style>
+      .done-true {
+        text-decoration: line-through;
+        color: lightgray;
+      }
+      .item {
+        margin-bottom: 20px;
+        font-size: 1.5em;
+      }
+    </style>
+
+    <div id="items">
+
+      <div class="item" horizontal layout>
+        <div class="done-{{ task.done }}" flex>{{ task.content }}</div>
+        <div>
+          <paper-checkbox checked="{{ task.done }}" right></paper-checkbox>
+        </div>
+      </div>
+    </div>
   </template>
   <script>
     Polymer('task-item');

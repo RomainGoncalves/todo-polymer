@@ -3,15 +3,26 @@
 
 <polymer-element name="task-list">
   <template>
-    <task-item tasks="{{ tasks }}"></task-item>
+    <div class="remaining">
+      <!--Remaining Tasks: {{ tasksRemaining }}-->
+    </div>
+    <template repeat="{{task in tasks}}">
+
+      <task-item task="{{ task }}"></task-item>
+    </template>
   </template>
   <script>
     Polymer('task-list', {
       tasks: [
-        {content: "This is some content"},
-        {content: "this is a second element"}
+        {content: "First Task", done: true}
       ],
-      ready: function(){}
+      tasksRemaining: '',
+      ready: function() {
+        var tasks = this.tasks;
+        document.addEventListener('commit-task', function(e) {
+          tasks.push({content: e.detail.task, done: false});
+        });
+      }
     });
   </script>
 </polymer-element>
